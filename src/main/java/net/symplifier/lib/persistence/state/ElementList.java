@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * The ElementList provides a list that is being used in {@link State} for
  * maintaining list of {@link net.symplifier.lib.persistence.state.State.Element}s
- * or could be used within the {@link net.symplifier.lib.persistence.state.State.Element}
+ * and can be used within the {@link net.symplifier.lib.persistence.state.State.Element}
  * implementation for keeping a list of dependent {@link net.symplifier.lib.persistence.state.State.Element}s.
  *
  * Created by ranjan on 11/17/15.
