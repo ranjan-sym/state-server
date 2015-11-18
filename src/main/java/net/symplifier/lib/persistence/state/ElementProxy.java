@@ -7,14 +7,14 @@ import java.util.*;
  *
  * Created by ranjan on 11/15/15.
  */
-public class ElementProxy implements ElementType.ElementProxyOwner {
+public class ElementProxy implements ElementProxyOwner {
 
   // All the owners that own this Proxy. We keep a reference count, since the
   // same elementProxy may be owned by the same owner more than once. For example
   // the list might contain the same Element twice or the same Element may be
   // referenced in different context within a single Element (For Example
   // Manager and Supervisor  could be the same instance of Employee)
-  private final Map<ElementType.ElementProxyOwner, Integer> owners = new HashMap<>();
+  private final Map<ElementProxyOwner, Integer> owners = new HashMap<>();
 
   private final ElementType type;
   private final Object[] values;
@@ -82,7 +82,7 @@ public class ElementProxy implements ElementType.ElementProxyOwner {
     }
   }
 
-  void addOwner(ElementType.ElementProxyOwner owner) {
+  void addOwner(ElementProxyOwner owner) {
     synchronized(owners) {
       if (owners.containsKey(owner)) {
         owners.put(owner, owners.get(owner) + 1);
@@ -92,7 +92,7 @@ public class ElementProxy implements ElementType.ElementProxyOwner {
     }
   }
 
-  void removeOwner(ElementType.ElementProxyOwner owner) {
+  void removeOwner(ElementProxyOwner owner) {
     synchronized (owners) {
       assert(owners.containsKey(owner)): "Invalid State, Trying to remove owner " +
               "from a non member element. Reference counting is very sensitive, " +
@@ -255,7 +255,7 @@ public class ElementProxy implements ElementType.ElementProxyOwner {
   }
 
   @Override
-  public Set<ElementType.ElementProxyOwner> getOwners() {
+  public Set<ElementProxyOwner> getOwners() {
     return owners.keySet();
   }
 

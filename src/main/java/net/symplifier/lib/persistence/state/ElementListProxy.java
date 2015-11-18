@@ -5,14 +5,14 @@ import java.util.*;
 /**
  * Created by ranjan on 11/16/15.
  */
-public class ElementListProxy implements ElementType.ElementProxyOwner {
+public class ElementListProxy implements ElementProxyOwner {
 
   private final List<ElementProxy> children = new ArrayList<>();
   private final Class<? extends State.Element> entityClass;
   private final ElementType type;
-  private final Set<ElementType.ElementProxyOwner> owner;
+  private final Set<ElementProxyOwner> owner;
 
-  public ElementListProxy(ElementType.ElementProxyOwner owner, ElementType type) {
+  public ElementListProxy(ElementProxyOwner owner, ElementType type) {
     this.owner = Collections.singleton(owner);
 
     this.type = type;
@@ -165,7 +165,7 @@ public class ElementListProxy implements ElementType.ElementProxyOwner {
 //  }
 
   @Override
-  public Set<ElementType.ElementProxyOwner> getOwners() {
+  public Set<ElementProxyOwner> getOwners() {
     return owner;
   }
 }

@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by ranjan on 11/15/15.
  */
-public class State implements ElementType.ElementProxyOwner {
+public class State implements ElementProxyOwner {
   /* All the ElementTypes that have been registered on the system */
   private static final HashMap<Class<? extends Element>, ElementType> ELEMENT_TYPES = new HashMap<>();
 
@@ -141,7 +141,7 @@ public class State implements ElementType.ElementProxyOwner {
   }
 
   @Override
-  public Set<ElementType.ElementProxyOwner> getOwners() {
+  public Set<ElementProxyOwner> getOwners() {
     // A state cannot be owned
     return null;
   }
