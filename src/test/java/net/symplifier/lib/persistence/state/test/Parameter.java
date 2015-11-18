@@ -1,32 +1,45 @@
 package net.symplifier.lib.persistence.state.test;
 
-import net.symplifier.lib.persistence.state.EntityProxy;
-import net.symplifier.lib.persistence.state.EntityType;
+import net.symplifier.lib.persistence.state.ElementProxy;
+import net.symplifier.lib.persistence.state.ElementType;
 import net.symplifier.lib.persistence.state.State;
 
 /**
  * Created by ranjan on 11/15/15.
  */
-public class Parameter implements State.Entity {
+public class Parameter implements State.Element {
   private long id;
   private String name;
   private Unit unit;
+
+  public static void register(ElementType type) {
+    type.registerLong("id");
+    type.registerString("name");
+    type.registerReference("unit", Unit.class);
+  }
+
+  public Parameter(long id, String name, Unit unit) {
+    this.id = id;
+    this.name = name;
+    this.unit = unit;
+  }
 
   @Override
   public Long getId() {
     return id;
   }
 
-  @Override
-  public void register(EntityType type) {
-    type.registerLong("id");
-    type.registerString("name");
-    type.registerReference("unit", Unit.class);
-  }
-
-  public void updateProxy(EntityProxy proxy) {
+  public void updateProxy(ElementProxy proxy) {
     proxy.update(id);
     proxy.update(name);
     proxy.update(unit);
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Unit getUnit() {
+    return unit;
   }
 }
