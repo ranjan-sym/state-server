@@ -73,27 +73,27 @@ public class ElementList<T extends State.Element> implements List<T> {
   }
 
   @Override
-  public boolean containsAll(Collection<?> c) {
+  public boolean containsAll(@SuppressWarnings("NullableProblems") Collection<?> c) {
     return elements.containsAll(c);
   }
 
   @Override
-  public boolean addAll(Collection<? extends T> c) throws UnsupportedOperationException{
+  public boolean addAll(@SuppressWarnings("NullableProblems") Collection<? extends T> c) throws UnsupportedOperationException{
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean addAll(int index, Collection<? extends T> c) throws UnsupportedOperationException {
+  public boolean addAll(int index, @SuppressWarnings("NullableProblems") Collection<? extends T> c) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean removeAll(Collection<?> c) throws UnsupportedOperationException {
+  public boolean removeAll(@SuppressWarnings("NullableProblems") Collection<?> c) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean retainAll(Collection<?> c) throws UnsupportedOperationException {
+  public boolean retainAll(@SuppressWarnings("NullableProblems") Collection<?> c) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
 
@@ -148,16 +148,19 @@ public class ElementList<T extends State.Element> implements List<T> {
     return elements.lastIndexOf(o);
   }
 
+  @SuppressWarnings("NullableProblems")
   @Override
   public ListIterator<T> listIterator() {
     return elements.listIterator();
   }
 
+  @SuppressWarnings("NullableProblems")
   @Override
   public ListIterator<T> listIterator(int index) {
     return elements.listIterator(index);
   }
 
+  @SuppressWarnings("NullableProblems")
   @Override
   public List<T> subList(int fromIndex, int toIndex) {
     return elements.subList(fromIndex, toIndex);
@@ -178,18 +181,22 @@ public class ElementList<T extends State.Element> implements List<T> {
     return elements.contains(o);
   }
 
+  @SuppressWarnings("NullableProblems")
   @Override
   public Iterator<T> iterator() {
     return elements.iterator();
   }
 
+  @SuppressWarnings("NullableProblems")
   @Override
   public Object[] toArray() {
     return elements.toArray();
   }
 
+  @SuppressWarnings("NullableProblems")
   @Override
   public <T1> T1[] toArray(T1[] a) {
+    //noinspection SuspiciousToArrayCall
     return elements.toArray(a);
   }
 
