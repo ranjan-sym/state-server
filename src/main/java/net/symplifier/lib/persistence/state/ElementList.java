@@ -3,21 +3,53 @@ package net.symplifier.lib.persistence.state;
 import java.util.*;
 
 /**
+ * The ElementList provides a list that is being used in {@link State} for
+ * maintaining list of {@link net.symplifier.lib.persistence.state.State.Element}s
+ * or could be used within the {@link net.symplifier.lib.persistence.state.State.Element}
+ * implementation for keeping a list of dependent {@link net.symplifier.lib.persistence.state.State.Element}s.
+ *
  * Created by ranjan on 11/17/15.
  */
 public class ElementList<T extends State.Element> implements List<T> {
+
+  /* The underlying list of elements */
   private final List<T> elements = new ArrayList<>();
 
+  /**
+   * The Proxy List that this list is linked to. The Proxy is responsible for
+   * doing all the state work
+   */
   private ElementListProxy linkedProxy;
 
+  /**
+   * Link the Proxy with this list, this method is declared on a Package level
+   * and invoked from {@link State} while creating the lists within the States
+   * and from {@link ElementProxy} when this list is being updated to the
+   * Proxy.
+   *
+   * @param proxy The ElementListProxy that this list is being linked to
+   */
   void linkProxy(ElementListProxy proxy) {
     this.linkedProxy = proxy;
   }
 
+  /**
+   * Retrieve the Proxy that this list is linked to. This method is invoked
+   * by {@link ElementProxy} during assertion and by {@link State} while
+   * generating the oracle.
+   *
+   * @return {@link ElementListProxy}
+   */
   ElementListProxy getLinkedProxy() {
     return linkedProxy;
   }
 
+  /**
+   * The type of the Elements that this list stores. Make sure that the List
+   * is already linked before this method is invoked.
+   *
+   * @return {@link ElementType}
+   */
   public ElementType getType() {
     return linkedProxy.getType();
   }
