@@ -7,7 +7,8 @@ import java.util.Set;
 /**
  * Created by ranjan on 11/17/15.
  */
-public interface ElementProxyOwner {
+interface ElementProxyOwner {
+
   default State isState() {
     return null;
   }
