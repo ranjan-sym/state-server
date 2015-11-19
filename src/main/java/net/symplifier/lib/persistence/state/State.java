@@ -185,12 +185,12 @@ public class State implements ElementProxyOwner {
       ElementType type = State.getElementType(getClass());
       ElementProxy proxy = type.findProxy(this);
 
-      proxy.update(this);
-      // Go through the update process
-      this.updateProxy(proxy);
-
-      // Inform all the states for the proxy that the proxy has changed
-      proxy.syncStates();
+      // Try to update the proxy with the values from this element
+      // and sync all the states if there was any change
+      if (proxy.updateProxy(this)) {
+        // Inform all the states for the proxy that the proxy has changed
+        proxy.syncStates();
+      }
     }
 
 
