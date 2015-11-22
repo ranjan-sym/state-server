@@ -1,4 +1,4 @@
-package net.symplifier.lib.persistence.state;
+package net.symplifier.lib.state;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ import java.util.*;
  * </p>
  * <p>
  *   Use the {@link ElementProxy#update} methods from within the
- *   {@link net.symplifier.lib.persistence.state.State.Element#updateProxy(ElementProxy)}
+ *   {@link State.Element#updateProxy(ElementProxy)}
  *   method of the Element implementation. The update methods has to be called
  *   in the same sequence as in the register method.
  * </p>

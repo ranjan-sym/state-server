@@ -1,9 +1,9 @@
-package net.symplifier.lib.persistence.state.test;
+package net.symplifier.lib.state.test;
 
-import net.symplifier.lib.persistence.state.ElementList;
-import net.symplifier.lib.persistence.state.ElementProxy;
-import net.symplifier.lib.persistence.state.State;
-import net.symplifier.lib.persistence.state.utils.StateJsoniser;
+import net.symplifier.lib.state.ElementList;
+import net.symplifier.lib.state.ElementProxy;
+import net.symplifier.lib.state.State;
+import net.symplifier.lib.state.utils.StateJsoniser;
 import org.junit.Test;
 
 /**
@@ -31,9 +31,6 @@ public class TestCase implements State.EventListener {
     station.addParameter(Humidity);
     stations.add(station);
     stations.remove(station);
-
-
-    state.addEventListener(this);
 
     StateJsoniser jsoniser = new StateJsoniser(state);
     System.out.println(jsoniser.toJSON().toString(2));

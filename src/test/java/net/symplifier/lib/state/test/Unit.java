@@ -1,8 +1,8 @@
-package net.symplifier.lib.persistence.state.test;
+package net.symplifier.lib.state.test;
 
-import net.symplifier.lib.persistence.state.ElementProxy;
-import net.symplifier.lib.persistence.state.ElementType;
-import net.symplifier.lib.persistence.state.State;
+import net.symplifier.lib.state.ElementProxy;
+import net.symplifier.lib.state.ElementType;
+import net.symplifier.lib.state.State;
 
 /**
  * Created by ranjan on 11/16/15.

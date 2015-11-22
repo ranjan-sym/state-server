@@ -1,4 +1,4 @@
-package net.symplifier.lib.persistence.state;
+package net.symplifier.lib.state;
 
 import java.util.Date;
 
@@ -11,9 +11,9 @@ import java.util.Date;
  *   {@link Float}, {@link Double}, {@link Boolean}, {@link String} and
  *   {@link Date}</li>
  *   <li><b>Element: </b>A Element type represents a reference to another
- *   {@link net.symplifier.lib.persistence.state.State.Element}</li>
+ *   {@link State.Element}</li>
  *   <li><b>List: </b>A List type represents a list of
- *   {@link net.symplifier.lib.persistence.state.State.Element} of a specific
+ *   {@link State.Element} of a specific
  *   type</li>
  * </ol>
  * Created by ranjan on 11/17/15.
@@ -29,7 +29,7 @@ public interface ValueType {
 
   /**
    * Determines if the type is a list of Element. This value is set by
-   * {@link net.symplifier.lib.persistence.state.ElementType.ListType}
+   * {@link ElementType.ListType}
    *
    * @return {@code true} if the value returned is going to be a list of Elements
    */

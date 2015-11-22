@@ -1,4 +1,4 @@
-package net.symplifier.lib.persistence.state;
+package net.symplifier.lib.state;
 
 import java.util.Set;
 
@@ -8,10 +8,10 @@ import java.util.Set;
  *
  * <p>This interface has been used by {@link State} since it is the starting
  * pointing which owns the list of all the seed
- * {@link net.symplifier.lib.persistence.state.State.Element}s, {@link ElementListProxy}
- * which maintains the list of {@link net.symplifier.lib.persistence.state.State.Element}
+ * {@link State.Element}s, {@link ElementListProxy}
+ * which maintains the list of {@link State.Element}
  * and {@link ElementProxy} which can contain reference to other
- * {@link net.symplifier.lib.persistence.state.State.Element}</p>
+ * {@link State.Element}</p>
  *
  * Created by ranjan on 11/17/15.
  */

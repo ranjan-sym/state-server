@@ -1,9 +1,8 @@
-package net.symplifier.lib.persistence.state.test;
+package net.symplifier.lib.state.test;
 
-import net.symplifier.lib.persistence.state.ElementList;
-import net.symplifier.lib.persistence.state.ElementProxy;
-import net.symplifier.lib.persistence.state.ElementType;
-import net.symplifier.lib.persistence.state.State;
+import net.symplifier.lib.state.ElementProxy;
+import net.symplifier.lib.state.ElementType;
+import net.symplifier.lib.state.State;
 
 import java.util.ArrayList;
 import java.util.List;

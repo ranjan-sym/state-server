@@ -1,4 +1,4 @@
-package net.symplifier.lib.persistence.state;
+package net.symplifier.lib.state;
 
 import java.util.*;
 

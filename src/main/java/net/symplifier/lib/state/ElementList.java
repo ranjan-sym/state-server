@@ -1,12 +1,12 @@
-package net.symplifier.lib.persistence.state;
+package net.symplifier.lib.state;
 
 import java.util.*;
 
 /**
  * The ElementList provides a list that is being used in {@link State} for
- * maintaining list of {@link net.symplifier.lib.persistence.state.State.Element}s
- * and can be used within the {@link net.symplifier.lib.persistence.state.State.Element}
- * implementation for keeping a list of dependent {@link net.symplifier.lib.persistence.state.State.Element}s.
+ * maintaining list of {@link State.Element}s
+ * and can be used within the {@link State.Element}
+ * implementation for keeping a list of dependent {@link State.Element}s.
  *
  * Created by ranjan on 11/17/15.
  */

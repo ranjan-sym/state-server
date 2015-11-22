@@ -1,4 +1,4 @@
-package net.symplifier.lib.persistence.state;
+package net.symplifier.lib.state;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * The ElementType stores the structural layout of the
- * {@link net.symplifier.lib.persistence.state.State.Element} that needs to
+ * {@link State.Element} that needs to
  * be included in the {@link State}.
  *
  * Created by ranjan on 11/15/15.
@@ -169,7 +169,7 @@ public class ElementType implements ValueType {
   /**
    * Get the ListType for this ElementType
    *
-   * @return {@link net.symplifier.lib.persistence.state.ElementType.ListType}
+   * @return {@link ElementType.ListType}
    */
   public ListType getListType() {
     return listType;
@@ -322,7 +322,7 @@ public class ElementType implements ValueType {
   }
 
   /**
-   * Register a field of type reference to another {@link net.symplifier.lib.persistence.state.State.Element}
+   * Register a field of type reference to another {@link State.Element}
    *
    * @param name The name of the field
    * @param elementType The java class for the type of the Element to be referenced
@@ -332,7 +332,7 @@ public class ElementType implements ValueType {
   }
 
   /**
-   * Register a field of type list of {@link net.symplifier.lib.persistence.state.State.Element}s
+   * Register a field of type list of {@link State.Element}s
    *
    * @param name The name of the field
    * @param entityType The java class for the type of the Element that the list

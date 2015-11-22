@@ -1,6 +1,7 @@
-package net.symplifier.lib.persistence.state.utils;
+package net.symplifier.lib.state.utils;
 
 import net.symplifier.lib.persistence.state.*;
+import net.symplifier.lib.state.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

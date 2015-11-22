@@ -1,4 +1,4 @@
-package net.symplifier.lib.persistence.state;
+package net.symplifier.lib.state;
 
 import java.util.*;
 
@@ -13,7 +13,7 @@ import java.util.*;
  *   Create a state and keep it as long as it is needed on the
  *   server. Use {@link #createList(String, Class)} to create lists that need
  *   to be maintained for different
- *   {@link net.symplifier.lib.persistence.state.State.Element} types.
+ *   {@link State.Element} types.
  * </p>
  * <p>
  *   Use {@link #getAll()} to get initial data from the state for sending
@@ -21,7 +21,7 @@ import java.util.*;
  * </p>
  * <p>
  *   Use {@link #addEventListener(EventListener)} to add listeners for listening
- *   to all the {@link net.symplifier.lib.persistence.state.State.Element}s that
+ *   to all the {@link State.Element}s that
  *   are linked to this state. The linkage is determined automatically based
  *   on the elements that have been added to the seed list.
  * </p>
